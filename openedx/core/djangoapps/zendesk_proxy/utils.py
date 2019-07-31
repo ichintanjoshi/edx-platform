@@ -97,7 +97,7 @@ def get_zendesk_group_by_name(name):
     url = urljoin(settings.ZENDESK_URL, '/api/v2/groups.json')
 
     try:
-        response = requests.post(url, headers=_get_request_headers())
+        response = requests.get(url, headers=_get_request_headers())
 
         groups = json.loads(response.text)['groups']
         for group in groups:
