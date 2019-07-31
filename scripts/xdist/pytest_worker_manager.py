@@ -86,7 +86,7 @@ class PytestWorkerManager():
             try:
                 list_workers_response = self.ec2.describe_instances(InstanceIds=not_running)
             except:
-                logger.info("Exception hit trying to descibe instances")
+                logger.info("Exception hit trying to describe instances.")
                 continue
             del not_running[:]
             for reservations in list_workers_response['Reservations']:
